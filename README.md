@@ -1,0 +1,2 @@
+# Magazord.
+Teste técnico
