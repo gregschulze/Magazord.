@@ -126,3 +126,44 @@ Registro de Resultados:
 
 - Toda a execução dos testes vai ser registrada em uma ferramenta de gerenciamento de testes, onde eu documente cada caso de teste, com prints, logs e observações.
 - Se encontrar algum bug, eu registro com todos os detalhes pra facilitar a correção e a comunicação com os desenvolvedores.
+
+  # 3º Cenário:
+
+  Análise do Problema – Anúncios não Marcados como "Pausado (sem estoque)"
+
+**1. Levantamento Inicial e Consulta à Documentação do ML**
+
+Revisar a Documentação Oficial do ML:
+
+- Primeiramente, eu ia dar uma boa olhada na documentação do ML pra entender certinho qual informação deve ser enviada quando o estoque chega a zero. Por exemplo, ver se a API espera um campo com valor “0” ou se tem algum padrao específico pra acionar o status “Pausado (sem estoque)”.
+
+Comparar com o Comportamento Manual:
+
+- Quando a gente manda a atualização manual com estoque zero, o anúncio muda de status, certo? Então, a documentação provavelmente indica que é preciso enviar essa informação de forma explícita. Se não estiver chegando, pode ser que a integração automática esteja pulando esse passo.
+
+**2. Logs e Mapeamento dos Requisitos**
+ 
+Verificar os Logs:
+
+- Segundo o que foi informado, os logs não mostram o envio do estoque “0” quando o item se esgota. Isso me leva a pensar que, automaticamente, o ERP (ou a integração) não está enviando essa info.
+
+Mapeamento do Requisito:
+
+- Se o requisito do projeto diz “quando estoque = 0, o anúncio deve ser marcado como ‘Pausado (sem estoque)’”, é preciso garantir que essa regra esteja sendo aplicada. Se não estiver, é provável que falte alguma condição na integração.
+
+**3. Possíveis Hipóteses do Erro**
+
+Como não tenho acesso direto aos sistemas, aqui vão algumas hipóteses que eu levantaria:
+
+Erro na Integração do ERP com o ML:
+
+- Pode ser que o ERP Magazord não esteja enviando o valor “0” quando o estoque se esgota. Talvez o campo esteja vindo nulo ou com um valor diferente do esperado.
+
+Problema na Comunicação com a API do ML:
+
+- Mesmo que o ERP envie o valor, pode estar ocorrendo alguma perda de informação na transmissão, ou algum delay que faz com que o ML não receba o dado no momento certo.
+
+Falha na Lógica de Atualização Automática:
+
+- Se os anúncios são atualizados corretamente quando a atualização é feita manualmente, pode ser que a rotina automática que deveria detectar o estoque zerado esteja com algum problema ou não esteja sendo acionada.
+
