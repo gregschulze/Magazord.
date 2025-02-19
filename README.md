@@ -1,2 +1,128 @@
 # Magazord.
 Teste técnico
+
+# 1º Cenário:
+
+Plano de Testes para Integração com Marketplaces
+
+**1. Documentação e Materiais de Apoio**
+   
+Identificação da Documentação:
+
+- Documentos Oficiais: Primeiro, eu reuniria toda a documentação oficial dos marketplaces – os guias de integração, os manuais de API, os termos de uso, enfim, tudo que eles disponibilizam.
+- Especificações Técnicas: Também vou usar as especificações técnicas da integração que o time de desenvolvimento passou. Essas especificações vêm com diagramas, fluxos e requisitos bem detalhados.
+- Requisitos do Projeto: Não posso esquecer dos requisitos do projeto que a gente discutiu nas reuniões e que estão registrados, por exemplo, no JIRA. Esses documentos ajudam a entender o que o sistema precisa fazer.
+  
+Análise da Documentação:
+
+- Vou fazer uma leitura cuidadosa de todos esses materiais pra identificar os fluxos críticos – como, entender exatamente como a atualização do estoque acontece em tempo real e quais são os pontos que podem dar ruim.
+- Durante a leitura, anoto dúvidas e pontos de risco que podem ser discutidos com a equipe. Assim, consigo pensar em testes que realmente impactam o negócio.
+  
+Mapeamento dos Requisitos:
+
+- Cada requisito do sistema vai ser ligado a um ou mais casos de teste. Por exemplo, se o requisito é que o estoque seja atualizado imediatamente após uma venda, eu crio testes para simular essa situação e ver se o estoque muda direitinho.
+- Pra manter tudo organizado, uso uma ferramenta de gerenciamento de requisitos (pode ser uma planilha mesmo ou algo como o JIRA) para mapear os requisitos pros testes correspondentes.
+  
+Ferramentas de Apoio:
+
+- Utilizarei o JIRA para rastrear os requisitos e os casos de teste.
+- Também posso recorrer a ferramentas de análise de texto (como planilhas com filtros, por exemplo) pra identificar pontos chave na documentação e garantir que nenhum detalhe importante seja esquecido.
+
+**2. Abrangência dos Testes**
+
+Funcionalidades a Serem Testadas:
+
+- Estoque: Vou testar se o estoque atualiza corretamente depois de cada venda ou reposição.
+- Anúncios: Confirmar que os anúncios são criados, atualizados e removidos como esperado.
+- Faturamento: Verificar se a emissão de faturas e a integração com o sistema financeiro acontecem sem nenhum erro.
+- Pedidos: Checar se os pedidos são gerados, atualizados, cancelados e rastreados de forma correta.
+- Preço: Garantir que qualquer alteração de preço no e-commerce seja refletida direitinho nos marketplaces.
+  
+Casos de Uso:
+
+- Cenários de Sucesso: Por exemplo, simular um fluxo completo onde um pedido é feito com sucesso, o estoque é atualizado, o anúncio é publicado e a fatura é gerada.
+- Cenários de Falha: Testar o que acontece se rolar algum erro na comunicação com a API do marketplace ou se os dados enviados estiverem errados.
+- Cenários de Carga: Simular uma situação de alta demanda, com muitos pedidos e atualizações acontecendo ao mesmo tempo, pra ver se o sistema aguentaa.
+- Cenários com Dados Inválidos: Inserir dados errados pra confirmar se o sistema valida as informações e mostra mensagens de erro adequadas.
+  
+Priorização dos Testes:
+
+- Vou priorizar primeiro as funcionalidades que têm maior impacto no negócio, como pedidos e faturamento, porque erros nessas áreas podem causar grandes problemas.
+- Também dou atenção especial aos pontos onde a comunicação com os marketplaces é mais crítica, já que esses são os lugares com maior risco de falhas.
+- Claro, sempre converso com a equipe pra alinhar e esclarecer dúvidas sobre quais pontos merecem mais atenção.
+  
+**3. Execução dos Testes**
+
+Ambiente de Teste:
+
+- Utilizarei um ambiente de homologação que simule bem o ambiente de produção, pra que os testes não afetem dados reais mas ainda sejam representativos.
+  
+Dados de Teste:
+
+- Vou criar cenários com dados fictícios – como produtos, pedidos e clientes – pra simular várias situações.
+- Se precisar, posso usar ferramentas para gerar esses dados e cobrir tanto os casos esperados quanto os imprevistos.
+
+Ferramentas de Automação:
+
+- Para testar as APIs, ferramentas como o Postman são essenciais.
+- Além disso, para os testes end-to-end, posso usar o Cypress, que permite automatizar os testes e executá-los repetidamente.
+  
+Registro de Resultados:
+
+- Documentarei tudo em uma ferramenta de gerenciamento de testes, que pode ser a que a equipe já usa.
+- Cada teste terá evidências – prints, logs, resultados – e se algum bug for encontrado, vou registrar com detalhes pra facilitar a análise e correção pela equipe de desenvolvimento.
+
+# 2º Cenário:
+
+Plano de Testes para Integração com o Bling
+- Básicamente farei quase tudo igual ao Cenário 1.
+
+**1. Documentação e Materiais de Apoio**
+
+Identificação da Documentação:
+
+- Primeiro, eu pegaria a documentação oficial da Bling (como o guia de integração, manuais da API, termos de uso – tudo que eles oferecem).
+- Também usaria as especificações técnicas da integração que a equipe de desenvolvimento passou pra gente, como diagramas, fluxos e os requisitos que definem o que deve acontecer.
+- Além disso, vou me apoiar nos requisitos do projeto, aqueles que discutimos em reuniões e estão registrados no JIRA ou outra ferramenta.
+
+Mapeamento dos Requisitos:
+
+- Depois de juntar toda a documentação, eu faria uma leitura detalhada pra identificar os pontos críticos – por exemplo, como o estoque deve ser atualizado em tempo real ou como os pedidos são processados.
+- Cada requisito vai ser relacionado a um ou mais casos de teste. Pra isso, uso planilhas ou outras ferramentas, onde eu mapeio cada requisito para os testes correspondentes.
+- 
+Utilização de Ferramentas:
+
+- Pra organizar tudo, uso o JIRA pra centralizar os requisitos e anotações.
+- Também posso usar ferramentas simples de análise de texto pra ajudar a identificar os pontos chave.
+
+**2. Abrangência dos Testes**
+
+Funcionalidades a Serem Testadas:
+
+- Sincronização de Produtos: Vou verificar se os produtos do e-commerce estão sendo corretamente importados e atualizados no Bling.
+- Atualização de Estoque: Testar se, depois de uma venda ou reposição, o estoque é atualizado em tempo real nos dois sistemas.
+- Processamento de Pedidos: Verificar se os pedidos feitos no e-commerce estão sendo refletidos corretamente no Bling, com todas as informações (quantidade, preço, status, etc).
+- Geração de Relatórios: Confirmar se os relatórios de movimentação do estoque e vendas estão sendo gerados conforme esperado.
+
+Priorização dos Testes:
+
+- Prioridade máxima para as funcionalidades que impactam diretamente o negócio, tipo atualização de estoque e processamento de pedidos.
+- Também vou dar atenção especial aos pontos onde a comunicação com a API da Bling é crítica, pois qualquer falha aqui pode causar grandes problemas.
+- E sempre conversar com a equipe pra alinhar e esclarecer dúvidas sobre quais pontos merecem mais atenção.
+
+**3. Execução dos Testes**
+
+Dados de Teste:
+
+- Pra testar, eu vou criar cenários com dados fictícios que simulem situações reais: produtos com variações no estoque, pedidos de diferentes tamanhos e até situações com dados errados pra ver como o sistema reage.
+- Posso usar geradores de dados ou mesmo inserir manualmente os dados, se necessário.
+
+Ferramentas de Automação:
+
+- Pra validar os endpoints e os fluxos de integração, eu usaria ferramentas como o Postman (ou o Insomnia, se preferir).
+- Para os testes end-to-end, eu rodo frameworks como Robot Framework ou Cypress, que permitem automatizar os fluxos críticos e agilizar o processo.
+
+Registro de Resultados:
+
+- Toda a execução dos testes vai ser registrada em uma ferramenta de gerenciamento de testes, onde eu documente cada caso de teste, com prints, logs e observações.
+- Se encontrar algum bug, eu registro com todos os detalhes pra facilitar a correção e a comunicação com os desenvolvedores.
