@@ -26,7 +26,7 @@ Mapeamento dos Requisitos:
 Ferramentas de Apoio:
 
 - Utilizarei o JIRA para rastrear os requisitos e os casos de teste.
-- Também posso recorrer a ferramentas de análise de texto (como planilhas com filtros, por exemplo) pra identificar pontos chave na documentação e garantir que nenhum detalhe importante seja esquecido.
+- Também posso recorrer a ferramentas de análise de texto pra identificar pontos chave na documentação e garantir que nenhum detalhe importante seja esquecido.
 
 **2. Abrangência dos Testes**
 
@@ -166,4 +166,155 @@ Problema na Comunicação com a API do ML:
 Falha na Lógica de Atualização Automática:
 
 - Se os anúncios são atualizados corretamente quando a atualização é feita manualmente, pode ser que a rotina automática que deveria detectar o estoque zerado esteja com algum problema ou não esteja sendo acionada.
+
+# 4º Cenário:
+
+Validação de Dados Cadastrais no Sistema de Gerenciamento de Usuários
+
+Casos de Teste:
+
+**1. Nome Completo**
+   
+Caso 01 – Nome Válido:
+
+Passos:
+- Preencher o campo com "Gregory Schulze".
+- Enviar o formulário.
+- Resultado Esperado: Cadastro realizado com sucesso (sem mensagens de erro).
+  
+Caso 02 – Campo Vazio:
+
+Passos:
+- Deixar o campo vazio.
+- Tentar enviar o formulário.
+- Resultado Esperado: Exibir mensagem de erro: "Nome completo é obrigatório".
+  
+Caso 03 – Nome com Caracteres Inválidos:
+
+Passos:
+- Preencher o campo com "Gregory123" ou "Gregory@Schulze".
+- Enviar o formulário.
+- Resultado Esperado: Mensagem de erro informando que não são permitidos números ou caracteres especiais.
+  
+**2. E-mail**
+   
+Casos de Teste:
+
+Caso 04 – E-mail Válido:
+
+Passos:
+- Preencher o campo com um e-mail válido.
+- Enviar o formulário.
+- Resultado Esperado: Cadastro realizado com sucesso.
+  
+Caso 05 – E-mail sem @ ou .com:
+
+Passos:
+- Preencher o campo com um formato inválido "gregoryschulze.com" ou "Gregory@Schulze".
+- Enviar o formulário.
+- Resultado Esperado: Exibir mensagem de erro: "Formato de e-mail inválido".
+  
+Caso 06 – Campo Vazio:
+
+Passos:
+- Deixar o campo em branco e enviar o formulário.
+- Resultado Esperado: Mensagem de erro: "E-mail é obrigatório".
+  
+**3. Número de Telefone**
+   
+Casos de Teste:
+
+Caso 07 – Número Válido:
+
+Passos:
+- Preencher o campo com um número válido.
+- Enviar o formulário.
+- Resultado Esperado: Cadastro realizado com sucesso.
+  
+Caso 08 – Número com letras:
+
+Passos:
+- Inserir o número com letras "47ABC968159".
+- Enviar o formulário.
+- Resultado Esperado: Mensagem de erro: "Número de telefone deve conter apenas dígitos".
+  
+Caso 09 – Campo Vazio:
+
+Passos:
+- Deixar o campo em branco e enviar.
+- Resultado Esperado: Mensagem de erro: "Número de telefone é obrigatório".
+  
+**4. Data de Nascimento**
+   
+Casos de Teste:
+
+Caso 10 – Data Válida (Formato Correto):
+
+Passos:
+- Preencher com uma data válida no formato dd/mm/aaaa.
+- Enviar o formulário.
+- Resultado Esperado: Cadastro realizado com sucesso.
+  
+Caso 11 – Data Inválida (Futura):
+
+Passos:
+- Inserir uma data futura.
+- Enviar o formulário.
+- Resultado Esperado: Mensagem de erro: "Data de nascimento não pode ser no futuro".
+  
+Caso 12 – Campo Vazio:
+
+Passos:
+- Deixar o campo vazio e enviar.
+- Resultado Esperado: Mensagem de erro: "Data de nascimento é obrigatória".
+  
+**5. Endereço (Rua, Cidade, Estado, CEP)**
+   
+Casos de Teste para cada subcampo:
+
+Rua:
+
+Caso 13 – Rua Válida:
+- Entrada: "Estr. da Madeira, 1875"
+- Resultado Esperado: Cadastro com sucesso.
+
+Caso 14 – Campo Vazio:
+- Entrada: ""
+- Resultado Esperado: Erro: "Rua é obrigatória".
+
+Cidade:
+
+Caso 15 – Cidade Válida:
+- Entrada: "Rio do Sul"
+- Resultado Esperado: Cadastro realizado.
+
+Caso 16 – Campo Vazio ou com Números:
+- Entrada: "" ou "Rio123"
+- Resultado Esperado: Erro: "Cidade inválida" ou "Cidade é obrigatória".
+  
+Estado:
+
+Caso 17 – Estado Válido:
+- Entrada: "Santa Catarina"
+- Resultado Esperado: Cadastro realizado
+
+Caso 18 – Estado Vazio ou Não Selecionado:
+- Entrada: ""
+- Resultado Esperado: Erro: "Estado é obrigatório".
+  
+CEP:
+
+Caso 18 – CEP Válido:
+- Entrada: "89165-063"
+- Resultado Esperado: Cadastro realizado com sucesso.
+  
+Caso 19 – CEP Inválido:
+- Entrada: "1234" ou "ABCDE123"
+- Resultado Esperado: Erro: "Formato de CEP inválido".
+
+Caso 20 – Campo Vazio:
+- Entrada: ""
+- Resultado Esperado: Erro: "CEP é obrigatório".
+
+
 
