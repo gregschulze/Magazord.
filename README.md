@@ -131,7 +131,6 @@ Registro de Resultados:
 
   Análise do Problema – Anúncios não Marcados como "Pausado (sem estoque)"
 
-**1. Levantamento Inicial e Consulta à Documentação do ML**
 
 Revisar a Documentação Oficial do ML:
 
@@ -141,7 +140,6 @@ Comparar com o Comportamento Manual:
 
 - Quando a gente manda a atualização manual com estoque zero, o anúncio muda de status, certo? Então, a documentação provavelmente indica que é preciso enviar essa informação de forma explícita. Se não estiver chegando, pode ser que a integração automática esteja pulando esse passo.
 
-**2. Logs e Mapeamento dos Requisitos**
  
 Verificar os Logs:
 
@@ -151,7 +149,7 @@ Mapeamento do Requisito:
 
 - Se o requisito do projeto diz “quando estoque = 0, o anúncio deve ser marcado como ‘Pausado (sem estoque)’”, é preciso garantir que essa regra esteja sendo aplicada. Se não estiver, é provável que falte alguma condição na integração.
 
-**3. Possíveis Hipóteses do Erro**
+**Possíveis Erros**
 
 Como não tenho acesso direto aos sistemas, aqui vão algumas hipóteses que eu levantaria:
 
